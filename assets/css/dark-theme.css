@@ -1,134 +1,157 @@
 :root {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --accent-color: #4CAF50;
-}
-
-.dark-mode {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.dark-mode nav {
-    background: #2d2d2d;
-    border-bottom: 1px solid #3d3d3d;
-}
-
-.dark-mode a {
-    color: var(--accent-color);
-}
-/* Add these rules */
-body.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #e0e0e0;
-}
-
-section {
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
-
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    border-bottom: 1px solid #333;
-}
-
-.card {
-    background: #2d2d2d;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1rem;
-}
-.qual-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.degree-card {
-    background: #2d2d2d;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #4CAF50;
-}
-
-.timeline-item {
-    border-left: 2px solid #4CAF50;
-    padding-left: 2rem;
-    margin: 2rem 0;
-    position: relative;
-}
-
-.timeline-date {
-    position: absolute;
-    left: -85px;
-    top: 0;
-    background: #4CAF50;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.pub-table {
-    background: #1f1f1f;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.pub-header, .pub-row {
-    display: grid;
-    grid-template-columns: 80px 1fr 200px;
-    padding: 1rem;
-    border-bottom: 1px solid #333;
-}
-
-.pub-header {
-    background: #2d2d2d;
-    font-weight: 600;
-}
-/* Force dark mode */
-body {
-    background: #121212 !important;
-    color: #e0e0e0 !important;
-    font-family: 'Segoe UI', sans-serif;
+    --accent: #2196F3;
+    --bg-dark: #0A1929;
+    --bg-light: #132F4C;
+    --text-primary: #E7EBF0;
   }
   
-  /* Academic Qualifications */
+  body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent);
+  }
+  
+  /* Floating Navigation */
+  nav {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(19, 47, 76, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav a {
+    color: var(--text-primary);
+    margin: 0 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Academic Grid */
   .qual-grid {
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 2rem 0;
   }
   
   .degree-card {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(33, 150, 243, 0.1);
   }
   
   .degree-card:hover {
     transform: translateY(-5px);
-    border-color: #4CAF50;
+    box-shadow: 0 8px 30px rgba(33, 150, 243, 0.2);
   }
   
   /* Timeline */
-  .timeline-item {
+  .timeline-container {
     position: relative;
-    padding-left: 2rem;
-    margin: 2rem 0;
-    border-left: 2px solid #4CAF50;
+    padding: 4rem 0;
   }
   
-  .timeline-date {
+  .timeline-item {
+    position: relative;
+    padding: 2rem;
+    margin-left: 2rem;
+    border-left: 2px solid var(--accent);
+  }
+  
+  .timeline-item::before {
+    content: '';
     position: absolute;
-    left: -100px;
-    top: 0;
-    background: #4CAF50;
-    color: #121212;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 600;
+    left: -10px;
+    top: 24px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-dark);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+  }
+  
+  /* Publications */
+  .pub-table {
+    background: var(--bg-light);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .pub-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    padding: 1.5rem;
+    background: rgba(33, 150, 243, 0.1);
+  }
+  
+  .pub-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    padding: 1.5rem;
+    transition: background 0.3s ease;
+  }
+  
+  .pub-row:hover {
+    background: rgba(33, 150, 243, 0.05);
+  }
+  
+  /* Scroll Effects */
+  [data-scroll] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  [data-scroll].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* CV Download Button */
+  .cv-download {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .cv-download:hover {
+    transform: scale(1.05);
   }
