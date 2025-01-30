@@ -41,3 +41,49 @@ section {
     border-radius: 8px;
     margin: 1rem;
 }
+.qual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.degree-card {
+    background: #2d2d2d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+.timeline-item {
+    border-left: 2px solid #4CAF50;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -85px;
+    top: 0;
+    background: #4CAF50;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.pub-table {
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pub-header, .pub-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    padding: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.pub-header {
+    background: #2d2d2d;
+    font-weight: 600;
+}
