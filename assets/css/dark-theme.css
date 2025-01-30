@@ -87,3 +87,48 @@ section {
     background: #2d2d2d;
     font-weight: 600;
 }
+/* Force dark mode */
+body {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Academic Qualifications */
+  .qual-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .degree-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .degree-card:hover {
+    transform: translateY(-5px);
+    border-color: #4CAF50;
+  }
+  
+  /* Timeline */
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    border-left: 2px solid #4CAF50;
+  }
+  
+  .timeline-date {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    background: #4CAF50;
+    color: #121212;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
