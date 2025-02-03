@@ -1,3 +1,47 @@
+/* Ensure basic element visibility */
+main {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.floating-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(19, 47, 76, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-content a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Force content visibility */
+.hero {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.highlights-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.highlight-card {
+  background: #132F4C;
+  padding: 2rem;
+  border-radius: 16px;
+  min-width: 250px;
+}
 :root {
   --accent: #2196F3;
   --bg-dark: #0A1929;

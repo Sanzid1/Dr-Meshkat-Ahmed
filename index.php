@@ -1,7 +1,7 @@
 <?php require_once 'includes/header.php'; ?>
 
-<section class="hero">
-    <div class="hero-content" data-scroll>
+<section class="hero" data-scroll>
+    <div class="hero-content">
         <h1>Prof. Dr. Chaudhury Meshkat Ahmed</h1>
         <p class="subtitle">Emeritus Professor of Cardiology</p>
         
