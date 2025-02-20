@@ -5,8 +5,11 @@
         <?php
         $degrees = [
             ['MBBS', 'Mymensingh Medical College', 'Dhaka University', '1984'],
-            ['MD Cardiology', 'Dhaka University', 'Dhaka University', '1997'],
-            // Add all degrees from CV
+            ['MD Cardiology', 'National Institute of Cardiovascular Diseases', 'Dhaka University', '1997'],
+            ['FACC', 'American College of Cardiology', 'USA', '2005'],
+            ['FRCP', 'Royal College of Physicians', 'Edinburgh', '2008'],
+            ['Fellowship Training', 'National Heart Foundation Hospital', 'Dhaka', '1992-1994'],
+            ['Advanced Cardiac Training', 'Mount Sinai Medical Center', 'New York, USA', '2003-2004']
         ];
         
         foreach($degrees as $degree) {

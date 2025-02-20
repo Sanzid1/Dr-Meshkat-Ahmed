@@ -4,44 +4,6 @@ main {
   padding: 2rem;
 }
 
-.floating-nav {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  background: rgba(19, 47, 76, 0.9);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  backdrop-filter: blur(10px);
-}
-
-.nav-content a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.5rem;
-  padding: 0.5rem 1rem;
-}
-
-/* Force content visibility */
-.hero {
-  text-align: center;
-  padding-top: 120px;
-}
-
-.highlights-grid {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.highlight-card {
-  background: #132F4C;
-  padding: 2rem;
-  border-radius: 16px;
-  min-width: 250px;
-}
 :root {
   --accent: #2196F3;
   --bg-dark: #0A1929;
@@ -77,6 +39,7 @@ body {
   padding: 0.5rem 1rem;
   position: relative;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .nav-content a:hover {
@@ -86,29 +49,59 @@ body {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 6rem 2rem;
+  padding-top: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--text-primary);
 }
 
 .subtitle {
   font-size: 1.5rem;
-  margin-bottom: 3rem;
-  opacity: 0.9;
+  color: var(--accent);
+  margin: 0.5rem 0;
 }
 
-/* Highlights Grid */
+.credentials {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0.5rem 0;
+}
+
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .highlight-card {
@@ -116,6 +109,7 @@ body {
   padding: 2rem;
   border-radius: 16px;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-card:hover {
@@ -124,11 +118,47 @@ body {
 
 .highlight-number {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
+.highlight-text {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Scroll Animations */
+[data-scroll] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+[data-scroll].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .profile-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* Timeline */
 .timeline {
   position: relative;
