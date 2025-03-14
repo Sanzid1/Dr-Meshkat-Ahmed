@@ -1,0 +1,315 @@
+:root {
+  --section-spacing: 6rem;
+  --card-spacing: 2rem;
+  --animation-duration: 0.7s;
+  --animation-delay: 0.15s;
+}
+
+/* Common CV Section Styles */
+.cv-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.cv-section:not(:first-child) {
+  margin-top: var(--section-spacing);
+}
+
+.cv-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.cv-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Card Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--card-spacing);
+  width: 100%;
+}
+
+/* Education/Qualification Cards */
+.qual-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--item-index, 0) * var(--animation-delay));
+}
+
+.qual-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.15);
+}
+
+.qual-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.qual-card .institution {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.qual-card .meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Publications Section */
+.publications-section {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pub-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+}
+
+.pub-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 180px;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.pub-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 180px;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--item-index, 0) * 0.05s);
+}
+
+.pub-row:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+}
+
+/* Awards Section */
+.awards-section {
+  text-align: center;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.award-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--item-index, 0) * var(--animation-delay));
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.15);
+}
+
+.award-card .award-year {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.award-card h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.award-card p {
+  color: var(--text-secondary);
+}
+
+/* Expandable Sections */
+.expandable-cv-section {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.expandable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expandable-header:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.expandable-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.expandable-header .toggle-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.expandable-header .toggle-icon::before,
+.expandable-header .toggle-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.expandable-header .toggle-icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.expandable-header .toggle-icon::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+.expandable-cv-section.expanded .toggle-icon::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--card-bg);
+  border-radius: 0 0 12px 12px;
+  opacity: 0;
+}
+
+.expandable-cv-section.expanded .expandable-content {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-top: none;
+}
+
+.expandable-cv-section.expanded .expandable-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 4rem;
+    --card-spacing: 1.5rem;
+  }
+
+  .cv-section {
+    padding: 3rem 1rem;
+  }
+
+  .cv-section h2 {
+    font-size: 2rem;
+  }
+
+  .card-grid,
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publications-section {
+    padding: 2rem 1rem;
+  }
+
+  .pub-header,
+  .pub-row {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .pub-header span:last-child,
+  .pub-row span:last-child {
+    display: none;
+  }
+
+  .expandable-header {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .expandable-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .expandable-cv-section.expanded .expandable-content {
+    padding: 1.5rem 1rem;
+  }
+}
