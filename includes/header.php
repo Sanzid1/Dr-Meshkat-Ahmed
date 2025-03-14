@@ -17,10 +17,5 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Dr-Meshkat-Ahmed';
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="dark-mode">
-<nav class="floating-nav">
-    <div class="nav-content">
-        <a href="<?= $base_url ?>/">Home</a>
-        <a href="<?= $base_url ?>/biodata/">Bio</a>
-    </div>
-</nav>
+
 <main>

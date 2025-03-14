@@ -3,6 +3,7 @@
 <section class="cv-section" data-scroll>
     <h2>Prof. Dr. Chaudhury Meshkat Ahmed</h2>
     <h3 class="subtitle text-center">Emeritus Professor of Cardiology</h3>
+<img src="<?= $base_url ?>/assets/images/professor-image.jpg" alt="Professor Meshkat Ahmed" class="professor-portrait">
     
     <div class="bio-nav">
         <a href="<?= $base_url ?>/biodata/academic.php" class="bio-nav-item">
